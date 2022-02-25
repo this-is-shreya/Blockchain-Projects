@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply For Counseling</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/apply.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h2 style="background-color:blueviolet;text-align: center;color: white;">APPLY FOR COLLEGE</h2>
+    <div style="margin-left: 40%;">
+    <form id="12">
+
+    <p>Account address: <input type="text" name="account" 
+        id="account" ></p>
+        <p>First Name <input type="text" name="first"></p>
+        <p>Last Name <input type="text" name="last"></p>
+        <p>Email Id <input type="email" name="email"></p>
+        <p>12th marksheet(size:upto 2MB) </p>
+        <input type="file" class="btn btn-default" name="marksheet_12" id="marksheet_12">
+        <img src="/images/check.png" id="1_check">
+        <img src="/images/cross.png" id="1_cross">
+        
+        <p>10th marksheet(size:upto 2MB) </p>
+        <input type="file" class="btn btn-default" name="marksheet_10" id="marksheet_10">
+        <img src="/images/check.png" id="2_check">
+        <img src="/images/cross.png" id="2_cross">
+        <p>Identity proof(Aadhar Card, Driving License, School ID Card etc.) </p>
+            <input type="file" class="btn btn-default" name="identity" id="identity">
+            <img src="/images/check.png" id="3_check">
+        <img src="/images/cross.png" id="3_cross">
+            <p>Photo</p><input type="file" class="btn btn-default" name="photo" id="photo">
+
+            <button type="submit" class="btn btn-primary" id="verif">Verify the Documents</button>
+    <button id="p"  class="btn btn-primary" style="display: none;">Proceed</button>
+
+        </form>
+        </div>
+    
+<script>
+
+    //write three ajax functions for three docs
+    $("form#12").submit(function(e) {
+    e.preventDefault();    
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: "/save-details-12",
+        type: 'POST',
+        data: formData,
+        success: function (data) {
+           if(data =="v"){
+               document.getElementById("1_check").style.display ="block"
+            document.getElementById("1_cross").style.display ="none"
+
+           }
+           else{
+            document.getElementById("1_cross").style.display ="block"
+            document.getElementById("1_check").style.display ="none"
+
+
+           }
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+});
+$("form#12").submit(function(e) {
+    e.preventDefault();    
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: "/save-details-10",
+        type: 'POST',
+        data: formData,
+        success: function (data) {
+            if(data =="v"){
+               document.getElementById("2_check").style.display ="block"
+            document.getElementById("2_cross").style.display ="none"
+
+           }
+           else{
+            document.getElementById("2_cross").style.display ="block"
+            document.getElementById("2_check").style.display ="none"
+
+
+           }
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+});
+$("form#12").submit(function(e) {
+    e.preventDefault();    
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: "/save-details-identity",
+        type: 'POST',
+        data: formData,
+        success: function (data) {
+            if(data =="v"){
+               document.getElementById("3_check").style.display ="block"
+            document.getElementById("3_cross").style.display ="none"
+
+           }
+           else{
+            document.getElementById("3_cross").style.display ="block"
+            document.getElementById("3_check").style.display ="none"
+
+
+           }
+           if(document.getElementById("1_check").style.display == "block" && document.getElementById("2_check").style.display == "block" && document.getElementById("3_check").style.display == "block"){
+
+        document.getElementById("p").style.display="block"
+document.getElementById("verif").style.display="none"
+}
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+  
+});
+
+$("#p").on("click",()=>{
+    console.log("ent heree")
+    $("form#12").submit(function(e) {
+    e.preventDefault();    
+    var formData = new FormData(this);
+    console.log("ent hereed")
+
+    if(document.getElementById("1_check").style.display == "block" && document.getElementById("2_check").style.display == "block" && document.getElementById("3_check").style.display == "block"){
+        console.log("ent her2")
+
+ 
+    $.ajax({
+        url:"/registration",
+        method:"POST",
+        data:formData,
+        success:function(){
+            window.location.href="/success"
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+        
+    })
+}
+    })
+})
+</script>
+</body>
+</html>

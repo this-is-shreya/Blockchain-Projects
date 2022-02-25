@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h2 class="text-center">Enter ex-employee's details</h2><br>
+    <form id="f" method="POST" action="/send-verif-mail" class="col-md-4 col-md-offset-4">
+        <input type="text"  name="email" id="email" placeholder="email" ><br><br>
+        <input type="text"  name="f_name" placeholder="First Name">
+     <br><br>   <input type="text"  name="l_name" placeholder="Last Name">
+      <br><br>  <input type="text"  name="role" placeholder="Role, eg:- software developer"><br><br>
+        <input type="text"  name="company" placeholder="Role, eg:- IBM">
+<br><br>        <input type="text"  name="year" placeholder="Year, eg:- 2020-21"><br><br>
+        <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+        
+    </form>
+    
+</body>
+</html>

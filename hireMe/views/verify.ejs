@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h2 style="background-color:blueviolet;text-align: center;color: white;">
+        Confirm details</h2>
+    
+    <form id="12" method="POST" action="/code-verif" class="col-md-4 col-md-offset-4">
+
+   
+        <p>Code <input type="text" name="code"></p>
+        <input type="hidden" name="id" value="<%= id %>">
+        
+       
+            <button type="submit" class="btn btn-primary" id="verif">
+                Verify</button>
+
+        </form>
+      
+    
+
+</body>
+</html>

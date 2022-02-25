@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Documents</title>
+    <link rel="stylesheet" href="css/displaydocs.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+  
+  <div class="w3-light-grey">
+        <div id="myBar" class="w3-container w3-green" style="height:24px;width:1%"></div>
+      </div>
+      <br>
+      <h4 id="verif"></h4>
+      
+    <h3>Your Uploaded Documents</h3>
+
+<img src="data:<%= data.marksheet_12.contentType %>;base64,<%=marksheet_12 %>" id="dp_img" >
+<img src="data:<%= data.marksheet_10.contentType %>;base64,<%=marksheet_10 %>" id="dp_img" >
+<img src="data:<%= data.identity.contentType %>;base64,<%=identity %>" id="dp_img" >
+
+<script>
+   window.onload= ()=> {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+        document.getElementById("verif").innerHTML = "Verified!"
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+    }
+  }
+}
+</script>
+</body>
+</html>

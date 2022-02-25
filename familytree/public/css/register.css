@@ -1,0 +1,18 @@
+img{
+    height: 20px;
+    width: 20px;
+    display: none;
+}
+h1{
+    background-color: rgb(100, 237, 237); text-align: center;
+
+}
+div{
+    margin-left: 40%;
+}
+#proceed{
+    display: none;
+}
+#birth{
+    display: none;
+}

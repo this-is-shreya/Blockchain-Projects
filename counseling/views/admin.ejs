@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body >
+    <div style="width: 100%;background-color: blanchedalmond;
+    text-align: center;">
+<h2>College Admin</h2>
+    </div>
+<div style="margin-left: 40%;">
+    <input type="text" id="code" name="code" placeholder="Enter Code">
+    <button onclick="submit_data()">Submit</button>
+    <br><br>
+    <div id="div" style="display: none;;">
+
+   
+<img 
+id="photo" style="height: 100px; width: 100px;">
+<br>
+First Name: <label id="f"></label><br>
+Last Name: <label id="l"></label><br>
+Email Id <label id="e"></label><br>
+<label >10th Marksheet</label><img src="images/check.png" style="width: 20px;height: 20px;;">
+<br>
+<label >12th Marksheet</label><img src="images/check.png" style="width: 20px;height: 20px;;">
+<br><label >Identity Proof</label><img src="images/check.png" style="width: 20px;height: 20px;;">
+
+</div>
+</div>
+       
+<script>
+    const submit_data =()=>{
+$.ajax({
+    url:"/get-student",
+    method:"POST",
+    data:{code:document.getElementById("code").value},
+    success:function(res){
+        document.getElementById("div").style.display ="block"
+        $("#f").html(res.data[0].first_name)
+        $("#l").html(res.data[0].last_name)
+        $("#e").html(res.data[0].email)
+document.getElementById("photo").src ="data:"+res.data[0].photo.contentType+";base64,"+res.img
+    }
+})
+    }
+</script>
+</body>
+</html>

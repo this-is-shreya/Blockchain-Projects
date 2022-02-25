@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <h1>
+        REGISTER (INDIA)</h1>
+    <div>
+
+    <form id="register">
+    <p> Your Account address: <input type="text" name="account" required></p>
+    
+<p>System Generated Identity proof(Aadhar Card, Driving License etc.) </p>
+<input type="file" name="identity" class="btn btn-default" required>
+<img src="images/cross.png" id="1_cr" >
+<img src="images/check.png" id="1_c" >
+<br>
+<p>Father's Account address: <input type="text" name="f_account" required></p>
+    
+<p>System Generated Identity proof(Aadhar Card, Driving License etc.) </p>
+<input type="file" name="f_identity" class="btn btn-default" required>
+<img src="images/cross.png" id="f_cr">
+<img src="images/check.png" id="f_c">
+<br>
+<p>Mother's Account address: <input type="text" name="m_account" required></p>
+    
+<p>System Generated Identity proof(Aadhar Card, Driving License etc.) </p>
+<input type="file" name="m_identity" class="btn btn-default" required>
+<img src="images/cross.png" id="m_cr">
+<img src="images/check.png" id="m_c">
+<br>
+<button id="verif" class="btn btn-primary" type="submit">Verify</button>
+<p id="birth">Your Birth Certificate/Relationship Certificate: <input type="file" class="btn btn-default"></p>
+
+<button id="proceed" class="btn btn-primary">Proceed</button>
+</form>
+</div>
+<script src="js/register.js"></script>
+</body>
+</html>

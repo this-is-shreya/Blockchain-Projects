@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Board of Education</title>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1 style="background-color: cornflowerblue; text-align: center;">CENTRAL BOARD OF EDUCATION</h1>
+    <div style="margin-left: 40%;">
+
+    <form action="/save-details" method="POST"  enctype="multipart/form-data">
+    <p>Account address: <input type="text" name="account"></p>
+    <p>First Name <input type="text" name="first"></p>
+    <p>Last Name <input type="text" name="last"></p>
+    <p>Email Id <input type="email" name="email"></p>
+    <p>12th marksheet(size:upto 2MB) </p><input type="file" class="btn btn-default" name="marksheet_12">
+    <p>10th marksheet(size:upto 2MB) </p><input type="file" class="btn btn-default" name="marksheet_10">
+<p>Identity proof(Aadhar Card, Driving License, School ID Card etc.) </p>
+<input type="file" name="identity" class="btn btn-default">
+
+<button id="proceed" class="btn btn-primary" type="submit">Save</button>
+</form>
+</div>
+</body>
+</html>

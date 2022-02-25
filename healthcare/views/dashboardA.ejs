@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD A</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/hospitalA/admin">ADMIN</a>
+        </div>
+        
+      </div>
+    </nav>
+
+     <form action="/fetch" method="POST" enctype="multipart/form-data">
+      <div id="search">
+        <input type="hidden" name="dashboard" value="A">
+      <input type="email"  name="email" placeholder="Enter email Id">
+      <button class="btn btn-primary" type="submit">Fetch Records</button>
+    </div>
+     </form>
+     
+   
+   
+</body>
+</html>
